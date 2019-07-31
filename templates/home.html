@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body %}
+<br><br>
+
+<h2>Here's what your friends are saying:</h2>
+{% for key in chathistory.keys() %}
+  <br>
+  {% if chathistory[key]['user'] == user %}
+    <div class="speech-bubble-self">
+  {% else %}
+    <div class="speech-bubble">
+  {% endif %}
+      <p style="display: inline-block; position: absolute; right: 0; margin: 0.2em;">{{ chathistory[key]['timestamp'] }}</p>
+      <h3 style="padding-left: 0.3em; padding-top: 0.3em;">{{ chathistory[key]['name'] }}</h3>
+      <p style="padding-left: 1em; padding-bottom: 0.3em; padding-top: 1em; margin: 1em">{{ chathistory[key]['body'] }}</p>
+    </div>
+{% endfor %}
+
+<br><br>
+
+<h3>Say Something:</h3>
+<form action="{{ url_for('newspost') }}" method=post id="postform">
+  <dl>
+  <textarea name="comment" form="postform" rows="6" cols="50"></textarea>
+  <input type="submit">
+  </dl>
+</form>
+
+{% endblock %}

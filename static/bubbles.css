@@ -1,0 +1,45 @@
+/* https://leaverou.github.io/bubbly/ */
+
+.speech-bubble {
+	position: relative;
+	background: #ccd3b2;
+	border-radius: .4em;
+	box-shadow: 10px 10px 5px 0px;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 0.813em solid transparent;
+	border-right-color: #ccd3b2;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -0.406em;
+	margin-left: -0.812em;
+}
+
+.speech-bubble-self {
+	position: relative;
+	background: #00e0dc;
+	border-radius: .4em;
+	box-shadow: 10px 10px 5px 0px;
+}
+
+.speech-bubble-self:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 0.813em solid transparent;
+	border-left-color: #00e0dc;
+	border-right: 0;
+	border-top: 0;
+	margin-top: -0.406em;
+	margin-right: -0.812em;
+}

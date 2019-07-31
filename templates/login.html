@@ -1,0 +1,68 @@
+{% block title %}sign up{% endblock %}
+
+{% block main %}
+
+{% if user_exists == True %}
+  <script>alert("Username already exists.");</script>
+{% endif %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h1>Sign in</h1>
+      <hr>
+
+      <form action="/login" method="POST">
+
+        <div class="form-group">
+          <label>Username</label>
+          <input class="form-control" type="text" name="username">
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input class="form-control" type="password" name="password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign in</button>
+
+      </form>
+
+      <h1>Or Sign Up</h1>
+
+      <form action="/signup" method="POST">
+        <div class="form-group">
+          <label>Username</label>
+          <input class="form-control" type="text" name="username" required>
+        </div>
+
+        <div class="form-group">
+          <label>Name</label>
+          <input class="form-control" type="text" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input class="form-control" type="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input class="form-control" type="text" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Bio</label>
+          <input class="form-control" type="text" name="bio">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
